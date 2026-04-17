@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiceBite Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="login-view" id="loginView">
+      <div class="login-panel">
+        <p class="eyebrow">SpiceBite Admin</p>
+        <h1>Welcome Back</h1>
+        <p class="muted">Sign in to manage table reservations.</p>
+
+        <form class="login-form" id="loginForm">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="admin@spicebite.com" autocomplete="email" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required />
+
+          <button type="submit" id="loginButton">Login</button>
+        </form>
+
+        <p class="message" id="loginMessage" role="alert"></p>
+      </div>
+    </section>
+
+    <section class="dashboard-view hidden" id="dashboardView">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Reservations</p>
+          <h1>Admin Dashboard</h1>
+        </div>
+        <button class="logout-btn" id="logoutButton" type="button">Logout</button>
+      </header>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <span>Total Bookings</span>
+          <strong id="bookingCount">0</strong>
+        </article>
+        <article class="summary-card">
+          <span>Latest Update</span>
+          <strong id="latestUpdate">--</strong>
+        </article>
+      </section>
+
+      <section class="table-card">
+        <div class="table-toolbar">
+          <h2>Booking Requests</h2>
+          <button class="refresh-btn" id="refreshButton" type="button">Refresh</button>
+        </div>
+
+        <div class="status-message" id="dashboardMessage" role="alert"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Guests</th>
+                <th>Requests</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bookingTableBody">
+              <tr>
+                <td colspan="7" class="empty-state">No bookings loaded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
