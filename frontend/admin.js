@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://spice-bite.onrender.com/api';
 const TOKEN_KEY = 'spicebite_admin_token';
 
 const loginView = document.getElementById('loginView');
