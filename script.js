@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitButton.textContent = 'Saving Reservation...';
         }
 
-        const response = await fetch('https://spice-bite.onrender.com/bookings', {
+        const response = await fetch('https://spice-bite.onrender.com/api/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
